@@ -1,0 +1,9 @@
+syntax: glob
+.git/
+.svn/
+.hg/
+silverstripe-cache
+_resampled
+.sass-cache
+#_ss_environment.php
+log/
