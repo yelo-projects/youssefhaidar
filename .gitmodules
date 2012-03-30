@@ -4,3 +4,6 @@
 [submodule "categories"]
 	path = categories
 	url = git@github.com:yelo-contrib/SilverStripe-Categories.git
+[submodule "urlField"]
+	path = urlField
+	url = git@github.com:yelo-contrib/SilverStripe-UrlField.git
