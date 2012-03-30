@@ -1,3 +1,6 @@
 [submodule "contactPage"]
 	path = contactPage
 	url = git@github.com:yelo-contrib/SilverStripe-ContactPage.git
+[submodule "SilverStripe-Categories"]
+	path = SilverStripe-Categories
+	url = git@github.com:yelo-contrib/SilverStripe-Categories.git
