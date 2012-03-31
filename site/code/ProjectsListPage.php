@@ -1,12 +1,11 @@
 <?php
-class ProjectsListPage extends HomePage {
+class ProjectsListPage extends ListPage {
 
-	static $allowed_children = array('Category','Collaboration');
-	static $default_child = 'Category';
-
-
+	protected $attached = 'Project';
+	protected $attachedTitle = 'Project';
+	static $has_many = array('Project'=>'Project');
 
 }
-class ProjectsListPage_Controller extends Page_Controller {
+class ProjectsListPage_Controller extends ListPage_Controller {
 
 }

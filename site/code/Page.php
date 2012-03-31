@@ -61,14 +61,14 @@ class Page_Controller extends ContentController {
 	);
 
 	public function init() {
-		$jqueryVer = '1.7.1'
+		$jqueryVer = '1.7.1';
 		if(Director::isDev()){
 			Requirements::javascript('site/javascript/jquery-'.$jqueryVer.'.js');
 			Requirements::javascript('site/javascript/jquery.easing.js');
 			Requirements::javascript('site/javascript/main.js');
 		}else{
-			Requirements::javascript('http://ajax.googleapis.com/ajax/libs/jquery/'+$jqueryVer+'/jquery.min.js')
-			Requirements::customScript("if(typeof jQuery === 'undefined'){document.write(unescape(\"%3Cscript src='/site/javascript/jquery-"+$jqueryVer+".min.js' type='text/javascript' %3E%3C/script%3E\"))}")
+			Requirements::javascript('http://ajax.googleapis.com/ajax/libs/jquery/'+$jqueryVer+'/jquery.min.js');
+			Requirements::customScript("if(typeof jQuery === 'undefined'){document.write(unescape(\"%3Cscript src='/site/javascript/jquery-"+$jqueryVer+".min.js' type='text/javascript' %3E%3C/script%3E\"))}");
 			Requirements::javascript('site/javascript/js.js');
 		}
 		parent::init();

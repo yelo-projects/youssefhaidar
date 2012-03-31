@@ -8,11 +8,12 @@ define('SERVER_PROD',!SERVER_DEV);
 
 global $project;
 $_project_dir = rtrim(str_replace('\\','/',dirname(__FILE__)),'/').'/';
-$project = 'youssefhaidar';
+$project = 'site';
 $theme_name = 'default';
-$project_name = UcWords(str_replace('_',' ',$project));
-$_project_log = dirname($_project_dir).'/log/'.$project.'-'.date('H-i-s').'.log';
-$_project_url = 'http://'.(SERVER_PROD ? $project.'.com' : 'localhost');
+$proj = 'youssefhaidar';
+$project_name = 'Youssef Haidar';
+$_project_log = dirname($_project_dir).'/log/'.$proj.'-'.date('H-i-s').'.log';
+$_project_url = 'http://'.(SERVER_PROD ? $proj.'.com' : 'localhost');
 
 global $databaseConfig;
 $databaseConfig = SERVER_PROD ? include 'db_prod.php':include 'db_dev.php';
