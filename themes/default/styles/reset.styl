@@ -1,0 +1,58 @@
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acrony address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, img {
+	
+}
+html {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;}
+body {line-height: 1em;}
+blockquote, q {quotes: none;}
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+table {border-collapse: collapse;border-spacing: 0;}
+textarea {overflow: auto;}
+
+a {
+	-webkit-tap-highlight-color: #FF5E99;
+	&:link, &:visited,&:link img, &:visited img {
+	///	@extend .resetAnchor;
+	}
+}
+:active, :focus {outline: 0;}
+
+//now reintroducing some basic stuff:
+a {
+	outline: none;
+	&:focus {outline: thin dotted;}
+	&:active {outline: none;}
+}
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+pre {white-space: pre; white-space: pre-wrap; word-wrap: break-word;padding: 15px;}
+
+// 1) Make inputs and buttons play nice in IE: www.viget.com/inspire/styling-the-button-element-in-internet-explorer/
+// 2) WebKit browsers add a 2px margin outside the chrome of form elements.
+// Firefox adds a 1px margin above and below textareas
+// 3) Set font-size to match <body>'s, and font-family to sans-serif
+// 4) Align to baseline
+button, input, select, textarea { width: auto; overflow: visible; margin: 0; font-size: 100%; font-family: sans; vertical-align: baseline; }
+
+// 1) Remove default scrollbar in IE: www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
+// 2) Align to text-top */
+textarea { overflow: auto; vertical-align:text-top; }
+
+// Hand cursor on clickable input elements
+label, input[type="button"], input.button, input[type="submit"], input.submit, input[type="image"], input.image, button {cursor: pointer;}
+
+// Remove extra padding and inner border in Firefox */
+input::-moz-focus-inner,
+button::-moz-focus-inner { border: 0; padding: 0; }
+
+// remove text-shadow on selection
+::-moz-selection{text-shadow: none; }
+::selection {text-shadow: none; }
+

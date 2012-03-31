@@ -1,0 +1,107 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  line-height: 1em;
+}
+blockquote,
+q {
+  quotes: none;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea {
+  overflow: auto;
+}
+a {
+  -webkit-tap-highlight-color: #ff5e99;
+}
+:active,
+:focus {
+  outline: 0;
+}
+a {
+  outline: none;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active {
+  outline: none;
+}
+small {
+  font-size: 85%;
+}
+strong,
+th {
+  font-weight: bold;
+}
+td {
+  vertical-align: top;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+button,
+input,
+select,
+textarea {
+  width: auto;
+  overflow: visible;
+  margin: 0;
+  font-size: 100%;
+  font-family: sans;
+  vertical-align: baseline;
+}
+textarea {
+  overflow: auto;
+  vertical-align: text-top;
+}
+label,
+input[type="button"],
+input.button,
+input[type="submit"],
+input.submit,
+input[type="image"],
+input.image,
+button {
+  cursor: pointer;
+}
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+::-moz-selection {
+  text-shadow: none;
+}
+::selection {
+  text-shadow: none;
+}
+body {
+  width: 100%;
+}
