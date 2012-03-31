@@ -1,4 +1,3 @@
-syntax: glob
 .git/
 .svn/
 .hg/
@@ -8,4 +7,6 @@ _resampled
 #_ss_environment.php
 *~
 *.swp
-log/
+assets/Uploads
+assets/.sqlitedb
+log
