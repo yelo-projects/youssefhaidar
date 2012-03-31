@@ -27,6 +27,19 @@ class ExtendedDataObject extends DataObject{
         return $fieldSet;
 	}
 
+	public function getCMSFields_forPopup($params = null) {
+		$fieldSet = new FieldSet();
+		$fieldSet->push(new TabSet('Content'),'Content');
+		$fields = $this->_getFields($params);
+		foreach($fields as $tab=>$tabset){
+			$fieldSet->addFieldToTab('Content',new Tab($tab));
+			foreach($tabset as $name=>$field){
+				$fieldSet->addFieldToTab('Content.'.$tab,$field);
+			}
+		}
+        return $fieldSet;
+	}
+
 	public function _getFields($params=null){
 		return array(
 			'Main'	=>	array(

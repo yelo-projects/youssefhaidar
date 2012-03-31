@@ -39,6 +39,9 @@ class Page extends SiteTree {
 		return strtolower(str_replace(array(' ','/'), array('_',''),trim($this->Title)));
 	}
 
+	public function getNiceClassName(){
+		return str_replace(array('_','Page','Personal','Controller'),'', $this->class);
+	}
 }
 class Page_Controller extends ContentController {
 

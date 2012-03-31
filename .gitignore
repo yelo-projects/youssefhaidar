@@ -10,3 +10,4 @@ _resampled
 assets/Uploads
 assets/.sqlitedb
 log
+_temp*

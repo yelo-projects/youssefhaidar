@@ -3,7 +3,8 @@ class Project extends ExtendedDataObject{
 
 	static $allowed_children = 'none';
 	static $db = array(
-		  'Description'		=>	'HTMLText'
+		  'Title'			=>	'varchar'
+		, 'Description'		=>	'HTMLText'
 		, 'DateStarted'		=>	'Date'
 		, 'DateEnded'		=>	'Date'
 		, 'Client'			=>	'varchar'
@@ -12,7 +13,7 @@ class Project extends ExtendedDataObject{
 		, 'Category'		=>	'int'
 	);
 	static $has_many = array ('Images' => 'ProjectImage');
-	static $has_one = array('ProjectListPage'=>'ProjectListPage');
+	static $has_one = array('ProjectsList'=>'ProjectsListPage');
 
 	static $summary_fields = array(
 		  'Thumbnail'	=>	'Thumbnail'
@@ -22,6 +23,7 @@ class Project extends ExtendedDataObject{
 		, 'StatusStr'	=>	'Status'
 		, 'Location'	=>	'Location'
 		, 'CategoryStr'	=>	'Category'
+		//, 'ProjectsList.Title'=>	'Project Page'
 	);
         
 	static $searchable_fields = array(
@@ -52,9 +54,9 @@ class Project extends ExtendedDataObject{
 	protected $_cover;
 
 	public static function getEnum($array,$n){
-		if(!func_num_args() || $n===null){return $array[0];}
+		if(func_num_args()===0 || $n===null){return $array[0];}
 		foreach($array as $i=>$str){
-			if($i===$n){return $str;}
+			if($i==$n){return $str;}
 		};
 		return $array[0];
 	}
@@ -67,6 +69,18 @@ class Project extends ExtendedDataObject{
 	public function getCategoryStr($catCode=null){
 		if(!func_num_args()){$catCode=$this->Category;}
 		return self::getEnum(self::$categories_codes,$catCode);
+	}
+
+	public function getCMSFields($params=null){
+		$fields = parent::getCMSFields($params);
+		$fields->addFieldToTab('Root.Content.Main', new HasOneDataObjectManager(
+			$this
+			, 'ProjectsList'
+			, 'ProjectsListPage'
+			, array('Title'=>'Title')
+			, 'getCMSfields'
+		));
+		return $fields;
 	}
 
 	public function _getFields(){
@@ -96,8 +110,8 @@ class Project extends ExtendedDataObject{
 		return $f;	
 	}
 
-	public function getYear(){
-		$d = $this->Date;
+	public function getYear($d=null){
+		if(!func_num_args()){$d=$this->DateStarted();}
 		if($d){
 			return date('Y',strtotime($d));
 		}
@@ -119,5 +133,17 @@ class Project extends ExtendedDataObject{
 			return $images->First();
 		}
 	}
+
+	public function getDate(){
+		$start = $this->getYear($this->DateStarted);
+		if($start){
+			$end = $this->getYear($this->DateEnded);
+			if($end){
+				return "from $start to $end";
+			}
+			return $start;
+		}
+		return 'unspecified';
+	}	
 }
 

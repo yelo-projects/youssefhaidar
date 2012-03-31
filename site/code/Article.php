@@ -3,27 +3,42 @@
 class Article extends ExtendedDataObject{
 
 	static $db = array(
-		  'Date'	=>	'Date'
+		  'Title'		=>	'varchar'
+		, 'Date'		=>	'Date'
 		, 'Description'	=>	'HTMLText'
 	);
 	static $has_one = array (
-		  'Image' => 'ArticleImage'
-		, 'Document'	=>	'File'
-		, 'LinksListPage'=>'LinksListPage'
+		  'Image'			=> 'ArticleImage'
+		, 'Document'		=>	'File'
+		, 'ArticlesList'	=>'ArticlesListPage'
 	);
 
 	static $summary_fields = array(
-		  'Thumbnail'
-		, 'Title'
-		, 'Date'
-		, 'Description'
+		  'Thumbnail'	=>	'Thumbnail'
+		, 'Title'		=>	'Title'
+		, 'Date'		=>	'Date'
+		, 'Description'	=>	'Description'
+		//, 'ArticlesList.Title'=>	'Articles Page'
 	);
         
 	static $searchable_fields = array(
-		'Title',
-		'Date',
-		'Description'
+		'Title'
+		, 'Date'
+		, 'Description'
 	);
+
+	public function getCMSFields($params=null){
+		$fields = parent::getCMSFields($params);
+		$fields->addFieldToTab('Root.Content.Main', new HasOneDataObjectManager(
+			$this
+			, 'ArticlesList'
+			, 'ArticlesListPage'
+			, array('Title'=>'Title')
+			, 'getCMSfields'
+		));
+		return $fields;
+	}
+
 
 	public function _getFields($params=null){
 		$pf = parent::_getFields($params);
