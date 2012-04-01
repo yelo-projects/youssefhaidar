@@ -8,7 +8,7 @@ class PersonalLinksListPage extends ListPage {
 	static $plural_name = "Links Pages";
 
 	public function getNiceClassName(){
-		return str_replace(array('Page','Personal'),'', $this->class);
+		return strtolower(str_replace(array('Page','Personal'),'', $this->class));
 	}
 }
 class PersonalLinksListPage_Controller extends ListPage_Controller {

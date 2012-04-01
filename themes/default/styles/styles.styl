@@ -1,4 +1,106 @@
 @import 'reset';
-body{
+@import 'mixins';
+@import 'variables';
+
+html,body{
 	width:100%;
+	font-family:sans-serif;
+	margin:0;
+	padding:0;
+	background-color:#CCC;
 }
+
+.clear{
+	display:block;
+	width:100%;
+	clear:both;
+}
+
+#Wrapper{
+	width:100%;
+	min-height:1000px;
+	margin:0 auto;
+	text-align:center;
+	background-color:#CCC;
+	padding:20px 0 20px 0;
+}
+
+#Main{
+	width:$websiteWidth;
+	margin:0 auto;
+	text-align:left;
+	background-color:$backColor;
+	padding:$mainMargin;
+	min-height:500px;
+	position:relative;
+	box-shadow(0 0 20px rgba(0,0,0,0.2));
+}
+
+#Navigation{
+	margin:0 auto;
+	display:table;
+	width:$websiteWidth - ($logoWidth * 2);
+	height:$logoHeight;
+	position:relative;
+	ul{
+		margin:0 auto;
+		padding:0;
+		list-style:none;
+		clear:both;
+		height:20px;
+		text-align:left;
+		display:table-row;
+		width:100%;
+		position:absolute;
+		bottom:0;
+	}
+	li{
+		display:inline-block;
+		padding:0 9px 0 9px;
+		margin:0;
+		border-right:1px solid $linksColor;
+		&:first-child,&.first{padding-left:0;}
+		&:last-child,&.last{border-right:none;}
+	}
+	a{
+		display:block;
+		height:16px;
+		text-decoration:none;
+		color:linksColor;
+		border-bottom:1px solid transparent;
+		&.active,&:active,&:hover{
+			border-color:$linksColor;
+		}
+		&:visited{
+			color:$linksColor;
+		}
+	}
+}
+
+#Header{
+	width:$logoWidth;
+	height:$logoHeight;
+	display:block;
+	background:$blackColor;
+	float:right;
+	position:relative;
+	right: - $mainMargin;
+	padding:0;
+	top:- $logoHeight;
+}
+
+#Content{
+	position:relative;
+	top:$mainMargin;
+	width:$websiteWidth;
+	float:left;
+	clear:both;
+	padding-bottom:$mainMargin;
+	h1{
+		width:$websiteWidth - ($logoWidth * 2);
+		margin:0 auto ($mainMargin * 6) auto;
+	}
+}
+
+@import 'typography.styl';
+@import 'items.styl';

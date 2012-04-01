@@ -48,4 +48,15 @@ class ExtendedDataObject extends DataObject{
 		);
 	}
 
+	public function getNiceClassName(){
+		return strtolower($this->class);	
+	}
+
+	public function getTitleAtt(){
+		return strtolower(str_replace('  ','_',$this->_getTitle()));
+	}
+
+	protected function _getTitle(){
+		return $this->Title;
+	}
 }

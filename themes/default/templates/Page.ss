@@ -6,8 +6,9 @@
 	<% include PageTitle %>
 	</title>
 	<% include Head %>
+	<% require css(themes/default/css/styles.css) %>
 </head>
-<body class="typography $ClassName $URLSegment">
+<body class="typography $ClassName" id="Page-{$URLSegment}">
 <div id="Wrapper">
 <div id="Main">
 

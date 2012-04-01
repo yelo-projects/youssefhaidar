@@ -64,7 +64,7 @@ class Page_Controller extends ContentController {
 	);
 
 	public function init() {
-		$jqueryVer = '1.7.1';
+		$jqueryVer = '1.7.2';
 		if(Director::isDev()){
 			Requirements::javascript('site/javascript/jquery-'.$jqueryVer.'.js');
 			Requirements::javascript('site/javascript/jquery.easing.js');

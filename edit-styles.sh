@@ -2,4 +2,4 @@
 
 cd "$(dirname "$0")"
 cd ./themes/default/
-source ./edit-theme.sh
+source ./edit-styles.sh

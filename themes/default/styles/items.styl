@@ -1,0 +1,218 @@
+@import 'mixins';
+@import 'variables';
+
+.itemHead{
+	//@extend .animated
+	position:relative;
+	width:100%;
+	text-decoration:none;
+	display:block;
+	height:$itemClosedHeight + $mainMargin;
+	transition(all,1s,0);
+	outline:none;
+	padding:$mainMargin 0 $mainMargin 0;
+	&:visited{
+		color:$linksColor;
+	}
+	&:hover{
+		text-decoration:none;
+		transition(all,0.3s,0);
+		background:$mainColor;
+		color:$backColor;
+		&:visited{color:$backColor;}
+	}
+	&:active,&:focus{
+		outline:none;
+	}
+}
+
+.item{
+	background:$backColor;
+	width:100%;
+	height:$itemClosedHeight;
+	overflow:hidden;
+	border-bottom:1px solid $mainColor;
+	transition(height,0.3s,0);
+	position:relative;
+	padding-bottom:$mainMargin;
+	float:left;
+	clear:both;
+	.itemBody{
+		position:relative;
+		width:100%;
+	}
+	a.close{
+		display:block;
+		width:$closeIconSize;
+		height:$closeIconSize;
+		position:absolute;
+		top:- $closeIconSize;
+		right:0;
+		font-weight:bold;
+		font-size:$closeIconSize;
+		line-height:$closeIconSize;
+		text-align:center;
+	}
+	.Date{
+		display:block;
+		font-size:120%;
+		line-height:120%;
+		width:$sideColumnWidth;
+		float:left;
+	}
+	.Title{
+		display:block;
+		width:$middleColumnWidth;
+		float:left;
+		font-size:120%;
+		line-height:120%;
+	}
+	.Category{
+		display:block;
+		float:right;
+		font-size:120%;
+		line-height:120%;
+	}
+	&.current{
+		height:$itemOpenHeight;
+		.Title{
+			font-size:220%;
+			position:absolute;
+			display:block;
+			top:$mainMargin * 5;
+			left:0px;
+
+		}
+		.Category{
+			display:none;
+		}
+		a.close{
+			top:0;
+		}
+		.itemHead{
+			height:80px;
+			&:hover{
+				background:$backColor;
+				color:$mainColor;
+				&:visited{color:$mainColor;}
+			}
+		}
+
+	}
+
+}
+
+
+
+.Images{
+	width:100%;
+	height:$imagesHeight + $mainMargin + $imagesThumbnailSize + ($imagesThumbnailsBorderWidth * 2);
+	clear:both;
+	.ImagesContainer{
+		width:100%;
+		height:$imagesHeight;
+		overflow:hidden;
+		transition(all,1s,0);
+		position:relative;
+	}
+	.ImagesRow{
+		display:block;
+		width:7000px;
+		transition(all,1s,0);
+		margin-bottom:$mainMargin;
+		position:absolute;
+		top:0;
+		left:$imagesMargin;
+		.Image,.image-placeholder{
+			height:$imagesHeight;
+			min-width:100px;
+			display:table-cell;
+			padding-right:$mainMargin;
+			&:last-child,&.last{padding-right:0;}
+		}
+	}
+	.ImagesThumbnails{
+		width:100%;
+		height:$imagesThumbnailSize + ($imagesThumbnailsBorderWidth * 2);
+		clear:both;
+		margin-top:$mainMargin;
+		a{
+			display:block;
+			float:left;
+			outline:none;
+			width:$imagesThumbnailSize;
+			height:$imagesThumbnailSize;
+			overflow:hidden;
+			margin-right:$mainMargin;
+			border:$imagesThumbnailsBorderWidth solid transparent;
+			&:active,&.current{
+				border-color:$imagesThumbnailsBorderColor;
+				outline:none;
+			}
+			&:last-child,&.last{clear:right;}
+		}
+	}
+
+}
+
+.info{
+	width:180px;
+	float:left;
+	.title,.value{
+		float:left;
+		clear:both;
+		font-size:75%;
+		letter-spacing:1px;
+	}
+	.title{
+		letter-spacing:2px;
+		font-weight:bold;
+		text-transform:lowercase;
+	}
+	>div{
+		margin-top:($mainMargin / 2);
+		&:first-child{
+			margin-top:$mainMargin;
+		}
+	}
+}
+
+.item.article{
+	height:$itemArticleHeight;
+
+}
+
+.item.link{	
+	height:$itemLinkHeight;
+	&:target{
+		height:$itemLinkHeight;
+	}
+	.itemHead{
+		height:$itemLinkHeight;		
+		display:table-cell;
+		vertical-align:bottom;
+		&:hover{
+			background:$backColor;
+			color:$mainColor;
+		}
+	}
+	.Title{font-size:180%;}
+	.URL{
+		position:absolute;
+		display:table;
+		right:0;
+		top:0;
+		height:$itemLinkHeight;
+		width:($websiteWidth / 3 )*2;
+		a{
+			display:table-cell;
+			vertical-align:bottom;
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+	}
+	.full-url{
+		font-size:120%;
+	}
+}

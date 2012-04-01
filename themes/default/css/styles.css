@@ -102,6 +102,388 @@ button::-moz-focus-inner {
 ::selection {
   text-shadow: none;
 }
+html,
 body {
   width: 100%;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+}
+.clear {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+#Wrapper {
+  width: 100%;
+  min-height: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ccc;
+  padding: 20px 0 20px 0;
+}
+#Main {
+  width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #fdfdfd;
+  padding: 10px;
+  min-height: 500px;
+  position: relative;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.20);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,0.20);
+  box-shadow: 0 0 20px rgba(0,0,0,0.20);
+}
+#Navigation {
+  margin: 0 auto;
+  display: table;
+  width: 500px;
+  height: 100px;
+  position: relative;
+}
+#Navigation ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  height: 20px;
+  text-align: left;
+  display: table-row;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#Navigation li {
+  display: inline-block;
+  padding: 0 9px 0 9px;
+  margin: 0;
+  border-right: 1px solid #000;
+}
+#Navigation li:first-child,
+#Navigation li.first {
+  padding-left: 0;
+}
+#Navigation li:last-child,
+#Navigation li.last {
+  border-right: none;
+}
+#Navigation a {
+  display: block;
+  height: 16px;
+  text-decoration: none;
+  color: linksColor;
+  border-bottom: 1px solid transparent;
+}
+#Navigation a.active,
+#Navigation a:active,
+#Navigation a:hover {
+  border-color: #000;
+}
+#Navigation a:visited {
+  color: #000;
+}
+#Header {
+  width: 200px;
+  height: 100px;
+  display: block;
+  background: $blackColor;
+  float: right;
+  position: relative;
+  right: -10px;
+  padding: 0;
+  top: -100px;
+}
+#Content {
+  position: relative;
+  top: 10px;
+  width: 900px;
+  float: left;
+  clear: both;
+  padding-bottom: 10px;
+}
+#Content h1 {
+  width: 500px;
+  margin: 0 auto 60px auto;
+}
+.typography {
+  font-family: 'Walkway Bold', 'Kartika', verdana, sans-serif;
+}
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4 {
+  font-family: 'MgOpen Moderna', 'Helvetica', 'Helvetica Neue', verdana, sans-serif;
+  letter-spacing: 2px;
+  color: titlesColor;
+}
+.typography h1 {
+  font-size: 180%;
+}
+.typography a {
+  color: #000;
+  text-decoration: none;
+}
+.typography a:visited {
+  color: #000;
+}
+.itemHead {
+  position: relative;
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  height: 40px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  transition-delay: 0;
+  outline: none;
+  padding: 10px 0 10px 0;
+}
+.itemHead:visited {
+  color: #000;
+}
+.itemHead:hover {
+  text-decoration: none;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  transition-delay: 0;
+  background: #000;
+  color: #fdfdfd;
+}
+.itemHead:hover:visited {
+  color: #fdfdfd;
+}
+.itemHead:active,
+.itemHead:focus {
+  outline: none;
+}
+.item {
+  background: #fdfdfd;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  border-bottom: 1px solid #000;
+  -webkit-transition-property: height;
+  -moz-transition-property: height;
+  transition-property: height;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  transition-delay: 0;
+  position: relative;
+  padding-bottom: 10px;
+  float: left;
+  clear: both;
+}
+.item .itemBody {
+  position: relative;
+  width: 100%;
+}
+.item a.close {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -50px;
+  right: 0;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.item .Date {
+  display: block;
+  font-size: 120%;
+  line-height: 120%;
+  width: 200px;
+  float: left;
+}
+.item .Title {
+  display: block;
+  width: 500px;
+  float: left;
+  font-size: 120%;
+  line-height: 120%;
+}
+.item .Category {
+  display: block;
+  float: right;
+  font-size: 120%;
+  line-height: 120%;
+}
+.item.current {
+  height: 600px;
+}
+.item.current .Title {
+  font-size: 220%;
+  position: absolute;
+  display: block;
+  top: 50px;
+  left: 0px;
+}
+.item.current .Category {
+  display: none;
+}
+.item.current a.close {
+  top: 0;
+}
+.item.current .itemHead {
+  height: 80px;
+}
+.item.current .itemHead:hover {
+  background: #fdfdfd;
+  color: #000;
+}
+.item.current .itemHead:hover:visited {
+  color: #000;
+}
+.Images {
+  width: 100%;
+  height: 316px;
+  clear: both;
+}
+.Images .ImagesContainer {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  transition-delay: 0;
+  position: relative;
+}
+.Images .ImagesRow {
+  display: block;
+  width: 7000px;
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-delay: 0;
+  -moz-transition-delay: 0;
+  transition-delay: 0;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 0;
+  left: 200px;
+}
+.Images .ImagesRow .Image,
+.Images .ImagesRow .image-placeholder {
+  height: 250px;
+  min-width: 100px;
+  display: table-cell;
+  padding-right: 10px;
+}
+.Images .ImagesRow .Image:last-child,
+.Images .ImagesRow .image-placeholder:last-child,
+.Images .ImagesRow .Image.last,
+.Images .ImagesRow .image-placeholder.last {
+  padding-right: 0;
+}
+.Images .ImagesThumbnails {
+  width: 100%;
+  height: 56px;
+  clear: both;
+  margin-top: 10px;
+}
+.Images .ImagesThumbnails a {
+  display: block;
+  float: left;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin-right: 10px;
+  border: 3px solid transparent;
+}
+.Images .ImagesThumbnails a:active,
+.Images .ImagesThumbnails a.current {
+  border-color: #900;
+  outline: none;
+}
+.Images .ImagesThumbnails a:last-child,
+.Images .ImagesThumbnails a.last {
+  clear: right;
+}
+.info {
+  width: 180px;
+  float: left;
+}
+.info .title,
+.info .value {
+  float: left;
+  clear: both;
+  font-size: 75%;
+  letter-spacing: 1px;
+}
+.info .title {
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: lowercase;
+}
+.info >div {
+  margin-top: 5px;
+}
+.info >div:first-child {
+  margin-top: 10px;
+}
+.item.article {
+  height: 30px;
+}
+.item.link {
+  height: 40px;
+}
+.item.link:target {
+  height: 40px;
+}
+.item.link .itemHead {
+  height: 40px;
+  display: table-cell;
+  vertical-align: bottom;
+}
+.item.link .itemHead:hover {
+  background: #fdfdfd;
+  color: #000;
+}
+.item.link .Title {
+  font-size: 180%;
+}
+.item.link .URL {
+  position: absolute;
+  display: table;
+  right: 0;
+  top: 0;
+  height: 40px;
+  width: 600px;
+}
+.item.link .URL a {
+  display: table-cell;
+  vertical-align: bottom;
+}
+.item.link .URL a:hover {
+  text-decoration: underline;
+}
+.item.link .full-url {
+  font-size: 120%;
 }

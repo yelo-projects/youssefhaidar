@@ -1,0 +1,21 @@
+.typography {
+  font-family: $mainFont;
+}
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4 {
+  font-family: $titlesFont;
+  letter-spacing: 2px;
+  color: titlesColor;
+}
+.typography h1 {
+  font-size: 180%;
+}
+.typography a {
+  color: $linksColor;
+  text-decoration: none;
+}
+.typography a:visited {
+  color: $linksColor;
+}

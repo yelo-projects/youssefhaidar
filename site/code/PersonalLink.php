@@ -49,4 +49,8 @@ class PersonalLink extends LinkExternal{
 	public function getTitle(){
 		return false;
 	}
+
+	public function getNiceClassName(){
+		return 'link'; 
+	}
 }

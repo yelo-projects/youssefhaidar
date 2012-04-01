@@ -26,7 +26,7 @@ class ListPage extends Page {
 	}
 
 	public function getNiceClassName(){
-		return str_replace('Page','', $this->class);
+		return strtolower(str_replace('Page','', $this->class));
 	}
 
 	public function getAttachedChildren(){
@@ -34,6 +34,10 @@ class ListPage extends Page {
 			return DataObject::get($this->attached,$this->getNiceClassName().'ID='.$this->ID,$this->attachedSort,null,null);
 		}
 		return null;
+	}
+
+	public function getAttachedTitleAtt(){
+		return strtolower($this->attachedTitle);
 	}
 }
 
