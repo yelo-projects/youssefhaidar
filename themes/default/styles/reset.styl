@@ -19,12 +19,15 @@ a {
 }
 :active, :focus {outline: 0;}
 
-//now reintroducing some basic stuff:
 a {
 	outline: none;
 	&:focus {outline: thin dotted;}
 	&:active {outline: none;}
 }
+.noOutline{
+	&:active, &:focus {outline: 0;}
+}
+
 
 small { font-size: 85%; }
 strong, th { font-weight: bold; }

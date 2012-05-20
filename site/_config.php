@@ -39,4 +39,5 @@ if(SERVER_DEV){
 LeftAndMain::setApplicationName($project_name,$project_name,$_project_url);
 LeftAndMain::setLogo('themes/default/images/logo.png','width:162px;height:48px;display:inline-block;position: relative; left:110px; margin-top: -5px; padding-left: 0;');
 LeftAndMain::set_loading_image('themes/default/images/logo_square.png');
+Object::add_extension('Image','ImageDecorator');
 DataObject::add_extension('SiteConfig', 'CustomSiteConfig');

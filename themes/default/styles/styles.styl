@@ -4,10 +4,13 @@
 
 html,body{
 	width:100%;
+	height:100%;
+	overflow:hidden;
 	font-family:sans-serif;
 	margin:0;
 	padding:0;
 	background-color:#CCC;
+	color:#222;
 }
 
 .clear{
@@ -18,7 +21,8 @@ html,body{
 
 #Wrapper{
 	width:100%;
-	min-height:1000px;
+	height:100%;
+	overflow:auto;
 	margin:0 auto;
 	text-align:center;
 	background-color:#CCC;
@@ -40,8 +44,9 @@ html,body{
 	margin:0 auto;
 	display:table;
 	width:$websiteWidth - ($logoWidth * 2);
-	height:$logoHeight;
+	height:($logoHeight - 4);
 	position:relative;
+	margin-bottom:20px;
 	ul{
 		margin:0 auto;
 		padding:0;
@@ -67,8 +72,9 @@ html,body{
 		height:16px;
 		text-decoration:none;
 		color:linksColor;
+		padding:3px;
 		border-bottom:1px solid transparent;
-		&.active,&:active,&:hover{
+		&.active,&:active,&:hover, &.current{
 			border-color:$linksColor;
 		}
 		&:visited{
@@ -83,10 +89,13 @@ html,body{
 	display:block;
 	background:$blackColor;
 	float:right;
-	position:relative;
-	right: - $mainMargin;
+	position:absolute;
+	right:0;
 	padding:0;
-	top:- $logoHeight;
+	top:10px;
+	background:url(../images/logo.png) 50% 50% no-repeat;
+	overflow:hidden;
+	text-indent:-9999px;
 }
 
 #Content{
@@ -96,11 +105,82 @@ html,body{
 	float:left;
 	clear:both;
 	padding-bottom:$mainMargin;
-	h1{
+	h1,>p,form{
 		width:$websiteWidth - ($logoWidth * 2);
 		margin:0 auto ($mainMargin * 6) auto;
+	}
+	h1{
+		color:#555;
+	}
+	p{
+		a{
+			text-decoration:underline;
+		}
+	}
+}
+
+#ListHeader{
+	height:20px;
+	margin-bottom:10px;
+	border-bottom:1px solid #999;
+	.filter{
+		transition(all,200ms,0);
+		@extend .noOutline;
+		display:block;
+		float:left;
+		color:#666;
+		&.date{
+			width:$sideColumnWidth;
+		}
+		&.title{
+			width:$middleColumnWidth;
+		}
+		&.category{
+			float:right;
+		}
+		&.active{
+			padding-left:20px;
+			color:#555;
+			background:url(../images/order-asc.png) 0 50% no-repeat;
+			&.date{
+				width:($sideColumnWidth - 20);
+			}
+			&.title{
+				width:($middleColumnWidth - 20);
+			}
+			&.desc{
+				background-image:url(../images/order-desc.png);
+			}
+		}
+	}
+}
+
+form{
+	fieldset{
+		border:none;
+	}
+	.field{
+		margin-top:15px;
+		width:400px;
+		input,textarea{
+			width:396px;
+		}
+	}
+	.Actions{
+		margin-left:12px;
+	}
+	.message{
+		font-size:14px;
+		background:#990000;
+		color:#fdfdfd;
+		margin-bottom:10px;
+		padding:3px;
+	}
+	em{
+		color:#990000;
 	}
 }
 
 @import 'typography.styl';
 @import 'items.styl';
+@import 'scroll';

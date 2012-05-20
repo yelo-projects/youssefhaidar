@@ -53,6 +53,8 @@ class Project extends ExtendedDataObject{
 
 	protected $_cover;
 
+	static $default_sort = '`Project`.`Title`';
+
 	public static function getEnum($array,$n){
 		if(func_num_args()===0 || $n===null){return $array[0];}
 		foreach($array as $i=>$str){
@@ -134,16 +136,24 @@ class Project extends ExtendedDataObject{
 		}
 	}
 
-	public function getDate(){
+	public function getDateStr(){
 		$start = $this->getYear($this->DateStarted);
 		if($start){
 			$end = $this->getYear($this->DateEnded);
 			if($end){
+				if($start == $end){
+					return "started and ended in $start";
+				}
 				return "from $start to $end";
 			}
 			return $start;
 		}
 		return 'unspecified';
+	}
+
+	public function getDate(){
+		$start = $this->getYear($this->DateStarted);
+		if($start){return $start;}
 	}	
 }
 

@@ -1,4 +1,4 @@
-#! /bin/bash 
+#!/bin/bash 
 
 cd "$(dirname "$0")"
 sudo chmod -R 777 silverstripe-cache

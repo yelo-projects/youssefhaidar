@@ -68,6 +68,11 @@ class Page_Controller extends ContentController {
 		if(Director::isDev()){
 			Requirements::javascript('site/javascript/jquery-'.$jqueryVer.'.js');
 			Requirements::javascript('site/javascript/jquery.easing.js');
+			Requirements::javascript('site/javascript/jquery.tinysort.min.js');
+			Requirements::javascript('site/javascript/jquery.mousewheel.js');
+			Requirements::javascript('site/javascript/jquery.scrollTo-1.4.2-min.js');
+			Requirements::javascript('site/javascript/jquery.localscroll-1.2.7-min.js');
+			Requirements::javascript('site/javascript/jquery.jscrollpane.min.js');
 			Requirements::javascript('site/javascript/main.js');
 		}else{
 			Requirements::javascript('http://ajax.googleapis.com/ajax/libs/jquery/'+$jqueryVer+'/jquery.min.js');

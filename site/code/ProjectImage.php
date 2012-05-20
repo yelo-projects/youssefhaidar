@@ -1,5 +1,5 @@
 <?php
-class ProjectImage extends ExtendedImage{
+class ProjectImage extends Image{
 	
 	static $has_one = array('Project'=>'Project');
         

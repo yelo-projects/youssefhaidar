@@ -6,6 +6,7 @@
 	<% include PageTitle %>
 	</title>
 	<% include Head %>
+	<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
 	<% require css(themes/default/css/styles.css) %>
 </head>
 <body class="typography $ClassName" id="Page-{$URLSegment}">

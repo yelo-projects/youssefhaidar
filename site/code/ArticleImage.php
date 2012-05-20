@@ -1,5 +1,5 @@
 <?php
-class ArticleImage extends ExtendedImage{
+class ArticleImage extends Image{
 	
 	static $has_one = array('Article'=>'Article');
         

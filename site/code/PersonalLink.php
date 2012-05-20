@@ -27,7 +27,6 @@ class PersonalLink extends LinkExternal{
 	static $singular_name = "Link";
 	static $plural_name = "Links";
 
-
 	public function getCMSFields($params=null){
 		$fields = parent::getCMSFields($params);
 		$fields->addFieldToTab('Root.Content.Main', new HasOneDataObjectManager(
