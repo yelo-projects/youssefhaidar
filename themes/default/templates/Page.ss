@@ -6,11 +6,14 @@
 	<% include PageTitle %>
 	</title>
 	<% include Head %>
-	<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+	<!--<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>-->
 	<% require css(themes/default/css/styles.css) %>
 </head>
 <body class="typography $ClassName" id="Page-{$URLSegment}">
-<div id="Wrapper">
+<div id="Wrapper" class='js-hide'>
 <div id="Main">
 
 <% if SiteState = normal %>

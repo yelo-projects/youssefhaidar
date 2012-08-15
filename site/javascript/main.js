@@ -1,6 +1,10 @@
-(function($){
+$('html').addClass('js');
+
+(function(){
 	jQuery.fn.mailHider = function(replaceText){
-		return $("a[href^=mailto]",this).each(function(){
+		var mail = jQuery("a[href^=mailto]",this);
+		if(!mail || !mail.length){return;}
+		return mail.each(function(){
 			var token = this.rel;
 			this.onmouseover = this.oncontextmenu = function(){
 				this.href = this.href.split("?")[0].replace(token, "");
@@ -141,7 +145,19 @@ jQuery(function($){
 			});	
 		}
 
-		
+		var $body = $("#Wrapper").css("display", "none");
+
+		$("a.pageTransition").click(function(evt){
+			evt.preventDefault();
+			linkLocation = this.href;
+			$body.fadeOut(500, function(){window.location = linkLocation});
+		});
+
+		$('html').removeClass('js');		
+
 		refreshScroll();
 		$w.resize(refreshScroll);
 });
+jQuery(window).load(function(){
+	jQuery('#Wrapper').fadeIn(300);
+})

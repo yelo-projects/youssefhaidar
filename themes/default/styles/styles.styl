@@ -2,6 +2,8 @@
 @import 'mixins';
 @import 'variables';
 
+.js .js-hide{display: none;}
+
 html,body{
 	width:100%;
 	height:100%;
@@ -11,6 +13,12 @@ html,body{
 	padding:0;
 	background-color:#CCC;
 	color:#222;
+}
+
+html.js{
+	background-image:url('../images/loading.gif');
+	background-repeat:no-repeat;
+	background-position:50% 50%;
 }
 
 .clear{
@@ -43,7 +51,7 @@ html,body{
 #Navigation{
 	margin:0 auto;
 	display:table;
-	width:$websiteWidth - ($logoWidth * 2);
+	width:$websiteWidth - ($logoWidth * 2) + 15;
 	height:($logoHeight - 4);
 	position:relative;
 	margin-bottom:20px;
@@ -158,6 +166,10 @@ html,body{
 form{
 	fieldset{
 		border:none;
+	}
+	input,textarea{
+		margin-top:10px;
+		border:1px solid #ccc;
 	}
 	.field{
 		margin-top:15px;
