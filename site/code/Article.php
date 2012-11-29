@@ -72,4 +72,8 @@ class Article extends ExtendedDataObject{
 		else{return '(No Image)';}
 	}
 
+	public function canEdit(){return true;}
+	public function canCreate(){return true;}
+	public function canDelete(){return true;}
+	public function canPublish(){return true;}
 }

@@ -155,5 +155,10 @@ class Project extends ExtendedDataObject{
 		$start = $this->getYear($this->DateStarted);
 		if($start){return $start;}
 	}	
+
+	public function canEdit(){return true;}
+	public function canCreate(){return true;}
+	public function canDelete(){return true;}
+	public function canPublish(){return true;}
 }
 
