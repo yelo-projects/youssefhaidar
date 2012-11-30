@@ -1,6 +1,6 @@
 <?php
 
-class PersonalLink extends LinkExternal{
+class PersonalLink extends LinkExternal implements PermissionProvider{
 
 	static $db = array(
 		'Description'	=>	'varchar'
@@ -52,4 +52,29 @@ class PersonalLink extends LinkExternal{
 	public function getNiceClassName(){
 		return 'link'; 
 	}
+
+	public function providePermissions(){
+		return $this->_providePermissionsArray($this->class);
+	}
+
+	public function canEdit(){
+		return Permission::check($this->class.'_EDIT');
+	}
+
+	public function canCreate(){
+		return Permission::check($this->class.'_CREATE');
+	}
+
+	public function canDelete(){
+		return Permission::check($this->class.'_DELETE');
+	}
+
+	public function canPublish(){
+		return Permission::check($this->class.'_PUBLISH');
+	}
+
+	public function canView(){
+		return true;
+		//return Permission::check($this->class.'_VIEW');
+	}	
 }

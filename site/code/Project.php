@@ -1,5 +1,5 @@
 <?php
-class Project extends ExtendedDataObject{
+class Project extends ExtendedDataObject implements PermissionProvider{
 
 	static $allowed_children = 'none';
 	static $db = array(
@@ -156,9 +156,30 @@ class Project extends ExtendedDataObject{
 		if($start){return $start;}
 	}	
 
-	public function canEdit(){return true;}
-	public function canCreate(){return true;}
-	public function canDelete(){return true;}
-	public function canPublish(){return true;}
+	public function providePermissions(){
+		return $this->_providePermissionsArray($this->class);
+	}
+
+	public function canEdit(){
+		return Permission::check($this->class.'_EDIT');
+	}
+
+	public function canCreate(){
+		return Permission::check($this->class.'_CREATE');
+	}
+
+	public function canDelete(){
+		return Permission::check($this->class.'_DELETE');
+	}
+
+	public function canPublish(){
+		return Permission::check($this->class.'_PUBLISH');
+	}
+
+	public function canView(){
+		return true;
+		//return Permission::check($this->class.'_VIEW');
+	}
+
 }
 
