@@ -7,7 +7,5 @@ _resampled
 #_ss_environment.php
 *~
 *.swp
-assets/Uploads
-assets/.sqlitedb
 log
 _temp*
