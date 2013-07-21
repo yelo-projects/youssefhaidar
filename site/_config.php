@@ -28,9 +28,9 @@ if(SERVER_DEV){
 	ini_set('log_errors', 'On');
 	ini_set('error_log', 'log');
 	Director::set_environment_type('dev');
-	ini_set('display_errors', E_ALL);
-	ini_set('display_startup_errors', TRUE);
-	error_reporting(E_ALL);
+	//ini_set('display_errors', E_ALL);
+	//ini_set('display_startup_errors', TRUE);
+	//error_reporting(E_ALL);
 	Security::setDefaultAdmin('admin','password');
 }
 

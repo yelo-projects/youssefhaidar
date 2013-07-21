@@ -38,8 +38,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // ENVIRONMENT CONFIG
 
-if(defined('E_DEPRECATED')) error_reporting(E_ALL ^ E_DEPRECATED);
-else error_reporting(E_ALL);
+error_reporting(0);
 /*
  * This is for versions of PHP prior to version 5.2
  * Creating this here will allow both web requests and cron jobs to inherit it.
