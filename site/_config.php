@@ -1,6 +1,6 @@
 <?php
 
-$_dev_servers = array('localhost','127.0.0.1','www.yeloworks.com','yeloworks.com','www.youssefhaidar.com','youssefhaidar.com');
+$_dev_servers = array('localhost','127.0.0.1','www.yeloworks.com','yeloworks.com');
 $_dev_key = 'A5vfTP567657jyjdfffdfgdfgdfgeemt4';
 if(!isset($_SERVER['SERVER_NAME'])){$_SERVER['SERVER_NAME']='localhost';}
 define('SERVER_DEV',( (in_array($_SERVER['SERVER_NAME'], $_dev_servers))||isset($_GET[$_dev_key])));
