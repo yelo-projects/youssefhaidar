@@ -24,7 +24,7 @@ SiteTree::enable_nested_urls();
 
 Director::set_dev_servers($_dev_servers);
 
-if(SERVER_DEV || isset($_GET['96823432nmsdfsy89yih3mr333'])){
+//if(SERVER_DEV || isset($_GET['96823432nmsdfsy89yih3mr333'])){
 	ini_set('log_errors', 'On');
 	ini_set('error_log', 'log');
 	Director::set_environment_type('dev');
@@ -32,7 +32,7 @@ if(SERVER_DEV || isset($_GET['96823432nmsdfsy89yih3mr333'])){
 	//ini_set('display_startup_errors', TRUE);
 	//error_reporting(E_ALL);
 	Security::setDefaultAdmin('admin','password');
-}
+//}
 
 
 //SS_Log::add_writer(new SS_LogFileWriter($_project_log),SS_LOG::ERR);
