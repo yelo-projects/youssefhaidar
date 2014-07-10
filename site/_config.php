@@ -34,7 +34,7 @@ Director::set_dev_servers($_dev_servers);
 	Security::setDefaultAdmin('admin','password');
 //}
 
-
+Requirements::set_combined_files_enabled(false);
 //SS_Log::add_writer(new SS_LogFileWriter($_project_log),SS_LOG::ERR);
 LeftAndMain::setApplicationName($project_name,$project_name,$_project_url);
 LeftAndMain::setLogo('themes/default/images/logo.png','width:162px;height:48px;display:inline-block;position: relative; left:110px; margin-top: -5px; padding-left: 0;');
