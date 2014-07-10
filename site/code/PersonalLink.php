@@ -50,7 +50,7 @@ class PersonalLink extends LinkExternal implements PermissionProvider{
 	}
 
 	public function getNiceClassName(){
-		return 'link'; 
+		return 'link';
 	}
 
 	public function providePermissions(){
@@ -76,5 +76,5 @@ class PersonalLink extends LinkExternal implements PermissionProvider{
 	public function canView(){
 		return true;
 		//return Permission::check($this->class.'_VIEW');
-	}	
+	}
 }
