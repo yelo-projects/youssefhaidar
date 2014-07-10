@@ -1,6 +1,6 @@
 <?php
 
-$_dev_servers = array('localhost','127.0.0.1','www.yeloworks.com','yeloworks.com');
+$_dev_servers = array('localhost','127.0.0.1','www.yeloworks.com','yeloworks.com','www.youssefhaidar.com','youssefhaidar.com');
 $_dev_key = 'A5vfTP567657jyjdfffdfgdfgdfgeemt4';
 if(!isset($_SERVER['SERVER_NAME'])){$_SERVER['SERVER_NAME']='localhost';}
 define('SERVER_DEV',( (in_array($_SERVER['SERVER_NAME'], $_dev_servers))||isset($_GET[$_dev_key])));
@@ -24,7 +24,7 @@ SiteTree::enable_nested_urls();
 
 Director::set_dev_servers($_dev_servers);
 
-//if(SERVER_DEV || isset($_GET['96823432nmsdfsy89yih3mr333'])){
+if(SERVER_DEV || isset($_GET['96823432nmsdfsy89yih3mr333'])){
 	ini_set('log_errors', 'On');
 	ini_set('error_log', 'log');
 	Director::set_environment_type('dev');
@@ -32,7 +32,7 @@ Director::set_dev_servers($_dev_servers);
 	//ini_set('display_startup_errors', TRUE);
 	//error_reporting(E_ALL);
 	Security::setDefaultAdmin('admin','password');
-//}
+}
 
 Requirements::set_combined_files_enabled(false);
 //SS_Log::add_writer(new SS_LogFileWriter($_project_log),SS_LOG::ERR);
