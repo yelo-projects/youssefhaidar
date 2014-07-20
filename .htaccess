@@ -1,4 +1,6 @@
 Options +FollowSymLinks
+php_value post_max_size 45M
+php_value upload_max_filesize 40M
 ### SILVERSTRIPE START ###
 <Files *.ss>
 	Order deny,allow

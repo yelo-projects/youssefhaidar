@@ -35,7 +35,12 @@ class Project extends ExtendedDataObject implements PermissionProvider{
 	);
 
 	static $status_codes = array(
-		'Completed','On Hold','Cancelled'
+		  'Completed'
+		, 'On Hold'
+		, 'Cancelled'
+		, 'Under Design'
+		, 'Under Construction'
+		, 'Competition'
 	);
 	static $categories_codes = array(
 		  'Uncategorized'
@@ -49,6 +54,7 @@ class Project extends ExtendedDataObject implements PermissionProvider{
 		, 'Hotels'
 		, 'Culturel'
 		, 'Allotments'
+		, 'Multiple'
 	);
 
 	protected $_cover;
