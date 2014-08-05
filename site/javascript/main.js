@@ -143,6 +143,7 @@ jQuery(function($){
 				}
 				refreshScroll();
 			});	
+			$sorters.filter('.category').trigger('click');
 		}
 
 		var $body = $("#Wrapper").css("display", "none");

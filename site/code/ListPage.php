@@ -29,13 +29,28 @@ class ListPage extends Page {
 		return strtolower(str_replace('Page','', $this->class));
 	}
 
-	public function getAttachedChildren(){
+	public function getAttachedChildren($sort=''){
+		if(!$sort){$sort = $this->attachedSort;};
 		if($this->attached){
-			return DataObject::get($this->attached,$this->getNiceClassName().'ID='.$this->ID,$this->attachedSort,null,null);
+			return DataObject::get($this->attached,$this->getNiceClassName().'ID='.$this->ID,$sort,null,null);
 		}
 		return null;
 	}
 
+	public function getAttachedChildrenByCategory($dir=''){
+		if($dir){$dir= ' '.$dir;}else{$dir='';};
+		return $this->getAttachedChildren('Category'.$dir);
+	}
+
+	public function getAttachedChildrenByDate($dir=''){
+		if($dir){$dir= ' '.$dir;}else{$dir='';};
+		return $this->getAttachedChildren('Date'.$dir);
+	}
+
+	public function getAttachedChildrenByTitle($dir=''){
+		if($dir){$dir= ' '.$dir;}else{$dir='';};
+		return $this->getAttachedChildren('Title'.$dir);
+	}
 	public function getAttachedTitleAtt(){
 		return strtolower($this->attachedTitle);
 	}

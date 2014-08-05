@@ -10,6 +10,7 @@
 	<!--<link href='http://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<% require css(themes/default/css/styles.css) %>
 </head>
 <body class="typography $ClassName" id="Page-{$URLSegment}">
