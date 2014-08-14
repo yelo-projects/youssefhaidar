@@ -137,25 +137,16 @@ html.js{
 		display:block;
 		float:left;
 		color:#666;
+		padding-right:20px;
 		&.date{
 			width:$sideColumnWidth;
-		}
-		&.title{
-			width:$middleColumnWidth;
 		}
 		&.category{
 			float:right;
 		}
 		&.active{
-			padding-left:20px;
 			color:#555;
-			background:url(../images/order-asc.png) 0 50% no-repeat;
-			&.date{
-				width:($sideColumnWidth - 20);
-			}
-			&.title{
-				width:($middleColumnWidth - 20);
-			}
+			background:url(../images/order-asc.png) 100% 50% no-repeat;
 			&.desc{
 				background-image:url(../images/order-desc.png);
 			}
@@ -196,3 +187,4 @@ form{
 @import 'typography.styl';
 @import 'items.styl';
 @import 'scroll';
+@import 'mobile';

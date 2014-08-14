@@ -258,26 +258,17 @@ html.js {
   display: block;
   float: left;
   color: #666;
+  padding-right: 20px;
 }
 #ListHeader .filter.date {
   width: 200px;
-}
-#ListHeader .filter.title {
-  width: 500px;
 }
 #ListHeader .filter.category {
   float: right;
 }
 #ListHeader .filter.active {
-  padding-left: 20px;
   color: #555;
-  background: url("../images/order-asc.png") 0 50% no-repeat;
-}
-#ListHeader .filter.active.date {
-  width: 180px;
-}
-#ListHeader .filter.active.title {
-  width: 480px;
+  background: url("../images/order-asc.png") 100% 50% no-repeat;
 }
 #ListHeader .filter.active.desc {
   background-image: url("../images/order-desc.png");
@@ -803,4 +794,32 @@ form em {
 }
 * html .jspCorner {
   margin: 0 -3px 0 0;
+}
+@media (max-width: 900px) {
+  #Content {
+    width: 100%;
+  }
+  #Main {
+    width: 98%;
+    padding-right: 1%;
+    padding-left: 1%;
+  }
+  #Navigation {
+    height: 160px;
+  }
+  .item .Title {
+    width: auto;
+  }
+  .item .Category {
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  #Content p,
+  #Content h1 {
+    width: 100%;
+  }
+  .item.link .URL {
+    display: none;
+  }
 }
