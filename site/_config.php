@@ -30,7 +30,7 @@ if(SERVER_DEV || isset($_GET['96823432nmsdfsy89yih3mr333'])){
 	Director::set_environment_type('dev');
 	ini_set('display_errors', E_ALL);
 	ini_set('display_startup_errors', TRUE);
-	error_reporting(E_ALL);
+	error_reporting(E_ALL ^ E_STRICT);
 	Security::setDefaultAdmin('admin','password');
 }
 
