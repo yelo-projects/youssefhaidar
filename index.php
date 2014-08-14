@@ -11,4 +11,4 @@ error_reporting($_error_reporting);
 error_reporting(0);
 @ini_set('display_errors', 0);
 /**/
-define('BASE_PATH', dirname(__FILE__));include ('sapphire/main.php'); 
+define('BASE_PATH', dirname(__FILE__));include ('sapphire/main.php');

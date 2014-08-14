@@ -151,9 +151,9 @@ html.js {
   padding: 10px;
   min-height: 500px;
   position: relative;
-  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.20);
-  -moz-box-shadow: 0 0 20px rgba(0,0,0,0.20);
-  box-shadow: 0 0 20px rgba(0,0,0,0.20);
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 #Navigation {
   margin: 0 auto;
@@ -318,7 +318,7 @@ form em {
 .typography h2,
 .typography h3,
 .typography h4 {
-  font-family: $titlesFont;
+  font-family: 'Ubuntu', 'Helvetica Neue', verdana, sans-serif;
   letter-spacing: 2px;
   color: titlesColor;
 }
@@ -435,7 +435,9 @@ form em {
   width: 500px;
   float: left;
   font-size: 120%;
-  line-height: 120%;
+  line-height: 150%;
+  height: 100%;
+  overflow: hidden;
 }
 .item .Category {
   display: block;
@@ -448,10 +450,14 @@ form em {
 }
 .item.current .Title {
   font-size: 220%;
+  height: auto;
+  line-height: 120%;
+  overflow: auto;
   position: absolute;
   display: block;
   top: 50px;
   left: 0px;
+  width: 100%;
 }
 .item.current .Category {
   display: none;
@@ -479,7 +485,10 @@ form em {
   height: 30px;
 }
 .item.article.current {
-  height: 500px;
+  height: 600px;
+}
+.item.article.current.noImage {
+  height: 300px;
 }
 .Images {
   width: 100%;
@@ -605,9 +614,13 @@ form em {
 }
 .item.link {
   height: 40px;
+  border-bottom: 1px solid transparent;
 }
 .item.link:target {
   height: 40px;
+}
+.item.link .Title {
+  width: auto;
 }
 .item.link .itemHead {
   height: 40px;
@@ -622,22 +635,26 @@ form em {
   font-size: 180%;
 }
 .item.link .URL {
+  display: block;
+  float: right;
   position: absolute;
-  display: table;
+  width: 100%;
   right: 0;
-  top: 0;
+  bottom: 0;
+  text-align: right;
   height: 40px;
-  width: 600px;
-}
-.item.link .URL a {
-  display: table-cell;
   vertical-align: bottom;
 }
-.item.link .URL a:hover {
-  text-decoration: underline;
+.item.link .URL span {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
 }
 .item.link .full-url {
   font-size: 120%;
+}
+.item.link:hover {
+  border-bottom-color: #222;
 }
 .articleImage {
   width: 100%;
@@ -669,21 +686,16 @@ form em {
   -moz-transition-delay: 0;
   transition-delay: 0;
   margin: 0 auto;
-  background: rgba(0,0,0,0.40);
-  color: #fdfdfd;
-  font-size: 50px;
-  margin-top: 100px;
+  color: #000;
+  font-size: 20px;
   display: block;
-  padding: 50px;
-  position: relative;
-  top: -350px;
-  opacity: 0.3;
+  position: absolute;
+  bottom: -60px;
+  width: 100%;
+  text-align: center;
 }
-.articleImage .Image:hover .Description {
-  opacity: 1;
-}
-.article .itemHead .Title {
-  top: 0;
+.article.current .itemHead {
+  height: 125px;
 }
 .article .Document {
   position: absolute;

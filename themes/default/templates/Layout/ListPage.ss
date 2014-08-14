@@ -3,16 +3,20 @@ $Content
 <% if AttachedChildren %>
 <% if class=ProjectsListPage_Controller %>
 <div id="ListHeader">
-	<a href="#" data-filter="date" class="filter date">Date</a><a data-filter="title" class="filter title desc active" href="#">Name</a><a data-filter="category" href="#" class="filter category">Category</a>
+	<a href="#" data-filter="date" data-filter-group="date" class="filter date desc">Date</a><a data-filter="title" data-filter-group="" class="filter title desc active" href="#">Name</a><a data-filter="category" data-filter-group="category" href="#" class="filter category">Category</a>
+</div>
+<% else_if class=ArticlesListPage_Controller %>
+<div id="ListHeader">
+	<a href="#" data-filter="date" data-filter-group="year" class="filter date desc">Date</a><a data-filter="title" data-filter-group="" class="filter title desc active" href="#">Name</a>
 </div>
 <% end_if %>
 <div class="itemsList $attachedTitleAtt" id="ItemsList">
 <% control AttachedChildren %>
-<div class="item $firstLast $NiceClassName" id="item-$pos" data-filter-title="$Title" data-filter-date="$Date" data-filter-category="$CategoryStr">
+<div class="item $firstLast $NiceClassName $AdditionalClasses" id="item-$pos" data-filter-title="$Title" data-filter-date="$Date" data-filter-category="$CategoryStr" data-filter-year="$Year">
 	<a class="{$NiceClassName}-head itemHead" href="<% if URL %>$URL<% else %>#item-$pos<% end_if %>">
 		<% if DateStarted %><span class="Date">$DateStarted.Year</span>
 		<% else %>
-		<% if Date %><span class="Date">$DateStr</span><% end_if %>
+			<% if DateStr %><span class="Date">$DateStr</span><% end_if %>
 		<% end_if %>
 		<% if URL %>
 			<% if Text %><span class="Text Title">$Text</span><% end_if %>
@@ -22,9 +26,7 @@ $Content
 		<% if CategoryStr %><span class="Category">$CategoryStr</span><% end_if %>
 	</a>
 	<% if URL %>
-		<span class="URL">
-			$LinkURL<a href="$URL" class="$HTMLClasses text-url" target="_blank">$Description</a>
-		</span>
+			<a href="$URL" class="$HTMLClasses text-url URL" target="_blank"><span>$Description</span></a>
 	<% else %>
 	<div class="{$NiceClassName}-body itemBody">
 	<% if Images %>
