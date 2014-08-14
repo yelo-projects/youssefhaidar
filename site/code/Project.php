@@ -25,7 +25,7 @@ class Project extends ExtendedDataObject implements PermissionProvider{
 		, 'CategoryStr'	=>	'Category'
 		//, 'ProjectsList.Title'=>	'Project Page'
 	);
-        
+
 	static $searchable_fields = array(
 		  'Title'
 		, 'DateStarted'
@@ -115,11 +115,11 @@ class Project extends ExtendedDataObject implements PermissionProvider{
 		$f['Meta']['DateEnded']->setConfig('showcalendar', true);
 		$f['Meta']['DateEnded']->setConfig('dateformat', 'dd/MM/YYYY');
 		$f['Images']['Images']->setAddTitle('Image');
-		return $f;	
+		return $f;
 	}
 
 	public function getYear($d=null){
-		if(!func_num_args()){$d=$this->DateStarted();}
+		if(!func_num_args()){$d=$this->DateStarted;}
 		if($d){
 			return date('Y',strtotime($d));
 		}
@@ -160,7 +160,7 @@ class Project extends ExtendedDataObject implements PermissionProvider{
 	public function getDate(){
 		$start = $this->getYear($this->DateStarted);
 		if($start){return $start;}
-	}	
+	}
 
 	public function providePermissions(){
 		return $this->_providePermissionsArray($this->class);
@@ -188,4 +188,3 @@ class Project extends ExtendedDataObject implements PermissionProvider{
 	}
 
 }
-

@@ -20,7 +20,7 @@ class Article extends ExtendedDataObject implements PermissionProvider{
 		, 'Description'	=>	'Description'
 		//, 'ArticlesList.Title'=>	'Articles Page'
 	);
-        
+
 	static $searchable_fields = array(
 		'Title'
 		, 'Date'
@@ -57,7 +57,7 @@ class Article extends ExtendedDataObject implements PermissionProvider{
 		);
 		$f['Meta']['Date']->setConfig('showcalendar', true);
 		$f['Meta']['Date']->setConfig('dateformat', 'dd/MM/YYYY');
-		return $f;	
+		return $f;
 	}
 
 	public function getYear(){
@@ -67,8 +67,24 @@ class Article extends ExtendedDataObject implements PermissionProvider{
 		}
 	}
 
+	public function getAdditionalClasses(){
+		$c = '';
+		$c.=(($Image = $this->Image()) && $Image->ID) ? 'hasImage' : 'noImage';
+		return $c;
+	}
+
+	public function getDateStr(){
+		$d = $this->Date;
+		if($d){
+			return date('Y/m',strtotime($d));
+		};
+		return '&nbsp;';
+	}
+
 	public function getThumbnail(){
-		if ($Image = $this->Image()){return $Image->CMSThumbnail();}
+		if ($Image = $this->Image() && $Image->getURL()){
+			return $Image->CMSThumbnail();
+		}
 		else{return '(No Image)';}
 	}
 
