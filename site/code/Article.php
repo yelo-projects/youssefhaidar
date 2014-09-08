@@ -82,10 +82,13 @@ class Article extends ExtendedDataObject implements PermissionProvider{
 	}
 
 	public function getThumbnail(){
-		if ($Image = $this->Image() && $Image->getURL()){
-			return $Image->CMSThumbnail();
+		$Image = $this->Image();
+		if($Image){
+			if ($Image->getURL()){
+				return $Image->CMSThumbnail();
+			}
 		}
-		else{return '(No Image)';}
+		return '(No Image)';
 	}
 
 	public function providePermissions(){
